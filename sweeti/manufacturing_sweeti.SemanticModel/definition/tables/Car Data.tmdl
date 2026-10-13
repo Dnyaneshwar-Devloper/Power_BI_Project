@@ -1,0 +1,60 @@
+table 'Car Data'
+	lineageTag: d115b77e-6780-46a3-ad8a-1377552b8e75
+
+	measure 'Total Selling Price3' =
+			
+			SUM('CarData'[Selling_Price])
+		lineageTag: bd0f131e-0afa-4b66-a34b-242a47de60ac
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Cars' = COUNT('CarData'[Car_Name])
+		formatString: 0
+		lineageTag: 6bea94a0-0c7d-4b58-8d49-1d6a00c27b91
+
+	measure 'Total Selling Price2' =
+			
+			SUM('CarData'[Selling_Price])
+		lineageTag: 88504c4d-dad9-404c-80e2-92d0879325c4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Average Mileage' =
+			
+			AVERAGE('CarData'[Mileage])
+		lineageTag: 5d4f9d7d-2641-4aae-937a-1e5e99c27eb3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Average Selling Price' =
+			
+			AVERAGE('CarData'[Selling_Price])
+		formatString: 0.00
+		lineageTag: a654669a-101f-4d09-8aa3-d3fdc39b7b58
+
+	measure 'Average Engine CC' =
+			
+			AVERAGE('CarData'[Engine_CC])
+		lineageTag: 2bf1e1ec-8739-4cf1-9897-9a1a9d0eb159
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Column1
+		dataType: string
+		lineageTag: 08ab3a05-3c0f-4df5-aae2-906a28ea940d
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Car Data' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
