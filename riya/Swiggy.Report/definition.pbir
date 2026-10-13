@@ -1,0 +1,9 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definitionProperties/2.0.0/schema.json",
+  "version": "4.0",
+  "datasetReference": {
+    "byConnection": {
+      "connectionString": "Data Source=powerbi://api.powerbi.com/v1.0/myorg/Swiggy;initial catalog=Swiggy_project;access mode=readonly;integrated security=ClaimsToken;semanticmodelid=71ddeb4d-32a5-4920-9b0f-c890f880d737"
+    }
+  }
+}

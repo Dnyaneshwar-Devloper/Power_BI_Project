@@ -1,0 +1,86 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "Fluent2-CY26SU08",
+      "reportVersionAtImport": {
+        "visual": "2.12.0",
+        "report": "3.4.0",
+        "page": "2.3.1"
+      },
+      "type": "SharedResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "Fluent2-CY26SU08",
+          "path": "BaseThemes/Fluent2-CY26SU08.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "checkout2567804663511357.png",
+          "path": "checkout2567804663511357.png",
+          "type": "Image"
+        },
+        {
+          "name": "economics692486230823198.png",
+          "path": "economics692486230823198.png",
+          "type": "Image"
+        },
+        {
+          "name": "rating_(3)5572534056765509.png",
+          "path": "rating_(3)5572534056765509.png",
+          "type": "Image"
+        },
+        {
+          "name": "revenue9480415872157532.png",
+          "path": "revenue9480415872157532.png",
+          "type": "Image"
+        },
+        {
+          "name": "star_(1)5819643581976173.png",
+          "path": "star_(1)5819643581976173.png",
+          "type": "Image"
+        },
+        {
+          "name": "swiggy_logo2676794952490984.png",
+          "path": "swiggy_logo2676794952490984.png",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Swiggy"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "208b5d54-3c6f-4cbf-9a2f-36c3169c4ad7"
+  }
+}
