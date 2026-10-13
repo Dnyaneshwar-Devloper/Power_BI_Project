@@ -1,0 +1,66 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "68b24a7d459ab0b5c2ec",
+  "position": {
+    "x": 873.47228911660659,
+    "y": 631.29461394097416,
+    "z": 31005,
+    "height": 88.43566790121406,
+    "width": 191.83737190878742,
+    "tabOrder": 12027
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Hypertension is the ",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1f2937"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "most common",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1f2937"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "recorded disease",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1f2937"
+                    }
+                  },
+                  {
+                    "value": ".",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#1f2937"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

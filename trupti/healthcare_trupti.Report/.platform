@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "healthcare_trupti"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5ad68f7b-c798-4489-ae9d-f472c7d4ee97"
+  }
+}

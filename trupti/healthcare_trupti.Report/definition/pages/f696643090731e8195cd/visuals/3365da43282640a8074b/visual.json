@@ -1,0 +1,63 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "3365da43282640a8074b",
+  "position": {
+    "x": 1103.4050256597632,
+    "y": 632.655162677916,
+    "z": 31008,
+    "height": 68.027436847087742,
+    "width": 163.26584843301058,
+    "tabOrder": 12030
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Average patient",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1f2937"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": " stay is ",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1f2937"
+                    }
+                  },
+                  {
+                    "value": "10.2",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14pt",
+                      "color": "#159a91"
+                    }
+                  },
+                  {
+                    "value": " days.",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1f2937"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

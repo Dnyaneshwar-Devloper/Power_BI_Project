@@ -1,0 +1,170 @@
+table hospital_auto_dataset
+	lineageTag: 137982e0-93fc-4ff6-8529-07c8e3deb781
+
+	column Timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ef3f8130-94b1-4d0a-b614-947e336742c3
+		summarizeBy: none
+		sourceColumn: Timestamp
+
+		variation Variation
+			isDefault
+			relationship: aa856968-ff2c-499d-8eea-8fdaf94aaccf
+			defaultHierarchy: LocalDateTable_ccac52ec-737f-48bf-b01b-c692ea9abd2e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Patient_ID
+		dataType: string
+		lineageTag: 6dbb0397-cfa1-401f-8dd6-80613666c79f
+		summarizeBy: none
+		sourceColumn: Patient_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age
+		dataType: int64
+		formatString: 0
+		lineageTag: c59333f9-13d4-48ce-a288-f0c4c0fbf0e8
+		summarizeBy: sum
+		sourceColumn: Age
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: 2de1835a-e9c8-42a6-bf74-d807c75aab41
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column Disease
+		dataType: string
+		lineageTag: 3b8cd496-43ba-4204-966d-2fc3e996b554
+		summarizeBy: none
+		sourceColumn: Disease
+
+		annotation SummarizationSetBy = Automatic
+
+	column Doctor
+		dataType: string
+		lineageTag: dc1208ca-2811-4578-81cb-598956a51928
+		summarizeBy: none
+		sourceColumn: Doctor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: f2158685-3cee-48ce-9af4-074f19f08bbc
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column Admission_Type
+		dataType: string
+		lineageTag: 791b9dab-0258-4e6c-b657-bc80c6ac4041
+		summarizeBy: none
+		sourceColumn: Admission_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Days_Admitted
+		dataType: int64
+		formatString: 0
+		lineageTag: 0046b3a4-dfa4-479e-8327-2d3eada144a6
+		summarizeBy: sum
+		sourceColumn: Days_Admitted
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bill_Amount
+		dataType: int64
+		formatString: 0
+		lineageTag: 8fc3a674-8702-495b-9ba7-23d8918093ca
+		summarizeBy: sum
+		sourceColumn: Bill_Amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age Group' =
+			
+			SWITCH(
+			    TRUE(),
+			    hospital_auto_dataset[Age] <= 17, "0-17",
+			    hospital_auto_dataset[Age] <= 29, "18-29",
+			    hospital_auto_dataset[Age] <= 44, "30-44",
+			    hospital_auto_dataset[Age] <= 59, "45-59",
+			    "60+"
+			)
+		lineageTag: e0b7e4f8-88d0-45e0-b9c6-28bbdbfef1ed
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age Group Sort' =
+			
+			SWITCH(
+			    hospital_auto_dataset[Age Group],
+			    "0-17", 1,
+			    "18-29", 2,
+			    "30-44", 3,
+			    "45-59", 4,
+			    "60+", 5
+			)
+		formatString: 0
+		lineageTag: d956c939-376b-459e-85b9-dc1c56ac7a7d
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Admission Date' =
+			
+			DATE(
+			    YEAR(hospital_auto_dataset[Timestamp]),
+			    MONTH(hospital_auto_dataset[Timestamp]),
+			    DAY(hospital_auto_dataset[Timestamp])
+			)
+		formatString: Long Date
+		lineageTag: 043ffebc-b532-41ff-a1d3-a6074e57abd7
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 604c0467-88c0-40bb-892a-fb6dff69370c
+			defaultHierarchy: LocalDateTable_553017d0-a0a3-4b09-954e-69eabbe8dbf4.'Date Hierarchy'
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Average Daily Patients' =
+			
+			DIVIDE(
+			    [Total Patients],
+			    DISTINCTCOUNT(hospital_auto_dataset[Admission Date])
+			)
+		lineageTag: 0ab8e31f-61fa-4895-b1bf-e74b9da7cb37
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition hospital_auto_dataset = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\TRUPTI\Downloads\hospital_auto_dataset.csv"),[Delimiter=",", Columns=10, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Timestamp", type datetime}, {"Patient_ID", type text}, {"Age", Int64.Type}, {"Gender", type text}, {"Disease", type text}, {"Doctor", type text}, {"Department", type text}, {"Admission_Type", type text}, {"Days_Admitted", Int64.Type}, {"Bill_Amount", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

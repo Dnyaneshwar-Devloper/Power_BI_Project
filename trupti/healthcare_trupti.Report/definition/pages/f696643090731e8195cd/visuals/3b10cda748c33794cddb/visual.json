@@ -1,0 +1,73 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "3b10cda748c33794cddb",
+  "position": {
+    "x": 315.64730697048708,
+    "y": 631.29461394097416,
+    "z": 31000,
+    "height": 88.43566790121406,
+    "width": 219.04834664762251,
+    "tabOrder": 12021
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "   Cardiology has the ",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1f2937"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "  highest patient volume",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1f2937"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "  with ",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1f2937"
+                    }
+                  },
+                  {
+                    "value": "13",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1675d1"
+                    }
+                  },
+                  {
+                    "value": " patients.",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#1f2937"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

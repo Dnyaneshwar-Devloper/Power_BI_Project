@@ -1,0 +1,49 @@
+table Measure
+	lineageTag: 4a4828af-d2e7-4ac0-8788-87cac392f4ff
+
+	measure 'Total Patients' = DISTINCTCOUNT(hospital_auto_dataset[Patient_ID])
+		formatString: 0
+		lineageTag: c3caf90e-b814-4865-a82a-63e610b38814
+
+	measure 'Total Billing' = SUM(hospital_auto_dataset[Bill_Amount])
+		formatString: 0
+		lineageTag: ea29f885-0038-4d8d-8419-7d35e828c4ba
+
+	measure 'Average Bill' = AVERAGE(hospital_auto_dataset[Bill_Amount])
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 0b9ccc6b-f586-444e-9d57-5405b7fd6568
+
+	measure 'Average Age' = AVERAGE(hospital_auto_dataset[Age])
+		lineageTag: e751ef2a-a0ec-4b45-b3c1-cc94aa512566
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Average Stay' = AVERAGE(hospital_auto_dataset[Days_Admitted])
+		lineageTag: 51969d3e-0b23-4fd8-8a36-0d0864e10cd9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Hospital Days' = SUM(hospital_auto_dataset[Days_Admitted])
+		formatString: 0
+		lineageTag: 37a0f228-32b0-41f2-8ec3-4ee10815ae1d
+
+	measure 'Total Departments' = DISTINCTCOUNT(hospital_auto_dataset[Department])
+		formatString: 0
+		lineageTag: 60072b0a-68e0-4482-abfd-c3ba532655a3
+
+	measure 'Total Doctors' = DISTINCTCOUNT(hospital_auto_dataset[Doctor])
+		formatString: 0
+		lineageTag: 1984d9da-9f12-48d8-8d6b-244e81c8f90c
+
+	partition Measure = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

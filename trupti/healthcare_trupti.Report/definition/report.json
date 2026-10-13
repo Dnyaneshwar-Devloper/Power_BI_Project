@@ -1,0 +1,136 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY26SU07",
+      "reportVersionAtImport": {
+        "visual": "2.11.0",
+        "report": "3.4.0",
+        "page": "2.3.1"
+      },
+      "type": "SharedResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY26SU07",
+          "path": "BaseThemes/CY26SU07.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "ChatGPT_Image_Aug_21,_2026,_0219356631281700998.png",
+          "path": "ChatGPT_Image_Aug_21,_2026,_0219356631281700998.png",
+          "type": "Image"
+        },
+        {
+          "name": "ChatGPT_Image_Aug_22,_2026,_027306479402536191.png",
+          "path": "ChatGPT_Image_Aug_22,_2026,_027306479402536191.png",
+          "type": "Image"
+        },
+        {
+          "name": "ChatGPT_Image_Aug_22,_2026,_043186741969727024.png",
+          "path": "ChatGPT_Image_Aug_22,_2026,_043186741969727024.png",
+          "type": "Image"
+        },
+        {
+          "name": "ChatGPT_Image_Aug_22,_2026,_0448330160189200433.png",
+          "path": "ChatGPT_Image_Aug_22,_2026,_0448330160189200433.png",
+          "type": "Image"
+        },
+        {
+          "name": "ChatGPT_Image_Aug_22,_2026,_047595620190693948.png",
+          "path": "ChatGPT_Image_Aug_22,_2026,_047595620190693948.png",
+          "type": "Image"
+        },
+        {
+          "name": "ChatGPT_Image_Aug_22,_2026,_048560414033629399.png",
+          "path": "ChatGPT_Image_Aug_22,_2026,_048560414033629399.png",
+          "type": "Image"
+        },
+        {
+          "name": "ChatGPT_Image_Aug_22,_2026,_051111606926574803.png",
+          "path": "ChatGPT_Image_Aug_22,_2026,_051111606926574803.png",
+          "type": "Image"
+        },
+        {
+          "name": "ChatGPT_Image_Aug_22,_2026,_0513959834217892675.png",
+          "path": "ChatGPT_Image_Aug_22,_2026,_0513959834217892675.png",
+          "type": "Image"
+        },
+        {
+          "name": "ChatGPT_Image_Aug_22,_2026,_0526231071462155076.png",
+          "path": "ChatGPT_Image_Aug_22,_2026,_0526231071462155076.png",
+          "type": "Image"
+        },
+        {
+          "name": "ChatGPT_Image_Aug_22,_2026,_054128155871644522.png",
+          "path": "ChatGPT_Image_Aug_22,_2026,_054128155871644522.png",
+          "type": "Image"
+        },
+        {
+          "name": "ChatGPT_Image_Aug_22,_2026,_0549956629191861357.png",
+          "path": "ChatGPT_Image_Aug_22,_2026,_0549956629191861357.png",
+          "type": "Image"
+        },
+        {
+          "name": "ChatGPT_Image_Aug_24,_2026,_1101631209767907127.png",
+          "path": "ChatGPT_Image_Aug_24,_2026,_1101631209767907127.png",
+          "type": "Image"
+        },
+        {
+          "name": "ChatGPT_Image_Aug_25,_2026,_09136406529381497.png",
+          "path": "ChatGPT_Image_Aug_25,_2026,_09136406529381497.png",
+          "type": "Image"
+        },
+        {
+          "name": "ChatGPT_Image_Aug_25,_2026,_095338793641838431.png",
+          "path": "ChatGPT_Image_Aug_25,_2026,_095338793641838431.png",
+          "type": "Image"
+        },
+        {
+          "name": "ChatGPT_Image_Aug_25,_2026,_096399372539958635.png",
+          "path": "ChatGPT_Image_Aug_25,_2026,_096399372539958635.png",
+          "type": "Image"
+        },
+        {
+          "name": "ChatGPT_Image_Aug_25,_2026,_097074392651935744.png",
+          "path": "ChatGPT_Image_Aug_25,_2026,_097074392651935744.png",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}

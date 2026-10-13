@@ -1,0 +1,10 @@
+relationship aa856968-ff2c-499d-8eea-8fdaf94aaccf
+	joinOnDateBehavior: datePartOnly
+	fromColumn: hospital_auto_dataset.Timestamp
+	toColumn: LocalDateTable_ccac52ec-737f-48bf-b01b-c692ea9abd2e.Date
+
+relationship 604c0467-88c0-40bb-892a-fb6dff69370c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: hospital_auto_dataset.'Admission Date'
+	toColumn: LocalDateTable_553017d0-a0a3-4b09-954e-69eabbe8dbf4.Date
+
