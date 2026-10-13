@@ -1,0 +1,129 @@
+table dataset
+	lineageTag: 971dedc7-27b6-4a39-9d82-3a89c5f6d53b
+
+	column 'Item Fat Content'
+		dataType: string
+		lineageTag: bb282a43-a598-41e2-97d7-37ff94356e59
+		summarizeBy: none
+		sourceColumn: Item Fat Content
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Item Identifier'
+		dataType: string
+		lineageTag: ad8d60eb-5c01-4c26-a60f-8f5133ec1bde
+		summarizeBy: none
+		sourceColumn: Item Identifier
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Item Type'
+		dataType: string
+		lineageTag: b0fda369-25d2-4e26-9a81-1ddcd84e2789
+		summarizeBy: none
+		sourceColumn: Item Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Outlet Establishment Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: fc782a5d-1a90-4627-95eb-307d8760f0bf
+		summarizeBy: none
+		sourceColumn: Outlet Establishment Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Outlet Identifier'
+		dataType: string
+		lineageTag: e4cd83d2-c1dd-4ca5-99d6-61c46c5efb0c
+		summarizeBy: none
+		sourceColumn: Outlet Identifier
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Outlet Location Type'
+		dataType: string
+		lineageTag: 7cf74841-2963-4f73-92cb-7adcab7a58fd
+		summarizeBy: none
+		sourceColumn: Outlet Location Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Outlet Size'
+		dataType: string
+		lineageTag: 7b634051-2c65-49c6-ad12-df9c44ef6974
+		summarizeBy: none
+		sourceColumn: Outlet Size
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Outlet Type'
+		dataType: string
+		lineageTag: cc2ad5d3-eb8e-401d-be33-5215b706f734
+		summarizeBy: none
+		sourceColumn: Outlet Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Item Visibility'
+		dataType: double
+		lineageTag: 9be9118b-4158-42db-a9e3-330ac22d88ba
+		summarizeBy: none
+		sourceColumn: Item Visibility
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Item Weight'
+		dataType: double
+		lineageTag: abb586fe-8976-486e-9887-29f213a1b7ae
+		summarizeBy: average
+		sourceColumn: Item Weight
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Sales
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: e5433390-cbbe-43ee-bc54-24b30ff10e28
+		summarizeBy: sum
+		sourceColumn: Sales
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column Rating
+		dataType: double
+		lineageTag: 94501af5-3f09-4bee-9bc7-e4d5af1df514
+		summarizeBy: average
+		sourceColumn: Rating
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition dataset = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\owais\Downloads\gopuff_data.csv"),[Delimiter=",", Columns=12, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Item Visibility", type number}, {"Item Weight", type number}, {"Outlet Establishment Year", Int64.Type}, {"Rating", type number}, {"Sales", Currency.Type}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type","LF","Low Fat",Replacer.ReplaceText,{"Item Fat Content"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","reg","Regular",Replacer.ReplaceText,{"Item Fat Content"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","low fat","Low Fat",Replacer.ReplaceText,{"Item Fat Content"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Replaced Value2", each true)
+				in
+				    #"Filtered Rows"
+
+	changedProperty = Name
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

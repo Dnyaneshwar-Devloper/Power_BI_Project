@@ -1,0 +1,124 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY26SU05",
+      "reportVersionAtImport": {
+        "visual": "2.9.0",
+        "report": "3.3.0",
+        "page": "2.3.1"
+      },
+      "type": "SharedResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY26SU05",
+          "path": "BaseThemes/CY26SU05.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "coin5744508308284122.png",
+          "path": "coin5744508308284122.png",
+          "type": "Image"
+        },
+        {
+          "name": "grocery-basket6455195767131556.png",
+          "path": "grocery-basket6455195767131556.png",
+          "type": "Image"
+        },
+        {
+          "name": "sales5264755510249907.png",
+          "path": "sales5264755510249907.png",
+          "type": "Image"
+        },
+        {
+          "name": "sales9577502136710295.png",
+          "path": "sales9577502136710295.png",
+          "type": "Image"
+        },
+        {
+          "name": "star-rating33602463553805795.png",
+          "path": "star-rating33602463553805795.png",
+          "type": "Image"
+        },
+        {
+          "name": "star-rating7054419718942037.png",
+          "path": "star-rating7054419718942037.png",
+          "type": "Image"
+        },
+        {
+          "name": "supermaket7311128580217963.png",
+          "path": "supermaket7311128580217963.png",
+          "type": "Image"
+        },
+        {
+          "name": "trophy1531134812438799.png",
+          "path": "trophy1531134812438799.png",
+          "type": "Image"
+        },
+        {
+          "name": "WhatsApp_Image_2026-09-26_at_112856443919989125.jpeg",
+          "path": "WhatsApp_Image_2026-09-26_at_112856443919989125.jpeg",
+          "type": "Image"
+        },
+        {
+          "name": "WhatsApp_Image_2026-09-26_at_15703725103413765.jpeg",
+          "path": "WhatsApp_Image_2026-09-26_at_15703725103413765.jpeg",
+          "type": "Image"
+        },
+        {
+          "name": "WhatsApp_Image_2026-09-27_at_045590267275117824.png",
+          "path": "WhatsApp_Image_2026-09-27_at_045590267275117824.png",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}
