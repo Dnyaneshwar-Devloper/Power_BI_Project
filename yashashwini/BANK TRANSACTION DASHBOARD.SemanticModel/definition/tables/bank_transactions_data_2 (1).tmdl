@@ -1,0 +1,135 @@
+table 'bank_transactions_data_2 (1)'
+	lineageTag: 571e7168-4027-444d-a98c-eaba646ad7fe
+
+	column TransactionID
+		dataType: string
+		lineageTag: 099e02a8-44ae-4be9-acbc-2b751a73a19f
+		summarizeBy: none
+		sourceColumn: TransactionID
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccountID
+		dataType: string
+		lineageTag: 6ed8ce89-0e8e-4354-9232-960c5134e05e
+		summarizeBy: none
+		sourceColumn: AccountID
+
+		annotation SummarizationSetBy = Automatic
+
+	column TransactionAmount
+		dataType: double
+		lineageTag: d27043b4-1b95-4f79-9a65-68b3629b8616
+		summarizeBy: sum
+		sourceColumn: TransactionAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TransactionType
+		dataType: string
+		lineageTag: 8300c89b-d931-4018-8173-d9b21ece3562
+		summarizeBy: none
+		sourceColumn: TransactionType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Location
+		dataType: string
+		lineageTag: 5d414463-2924-4a16-81b5-2d4ca5f15eba
+		summarizeBy: none
+		sourceColumn: Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column DeviceID
+		dataType: string
+		lineageTag: eebf2c5a-693f-408e-9d84-3e9f712655ff
+		summarizeBy: none
+		sourceColumn: DeviceID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'IP Address'
+		dataType: string
+		lineageTag: 9fa3d3dc-9960-422a-8c96-851e71745d32
+		summarizeBy: none
+		sourceColumn: IP Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column MerchantID
+		dataType: string
+		lineageTag: 2ac70f07-bc75-48e0-8711-be7548fe4b04
+		summarizeBy: none
+		sourceColumn: MerchantID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Channel
+		dataType: string
+		lineageTag: ed609251-6c40-4e38-a877-5c5be7e21a5d
+		summarizeBy: none
+		sourceColumn: Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerAge
+		dataType: int64
+		formatString: 0
+		lineageTag: c448f6b4-c816-41f0-96fa-82ed7aacc0a2
+		summarizeBy: sum
+		sourceColumn: CustomerAge
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerOccupation
+		dataType: string
+		lineageTag: 80f9232a-a139-4902-8af3-19f82bcc416f
+		summarizeBy: none
+		sourceColumn: CustomerOccupation
+
+		annotation SummarizationSetBy = Automatic
+
+	column TransactionDuration
+		dataType: int64
+		formatString: 0
+		lineageTag: 14b0ca34-fb5a-4aa8-9615-3b37a93161e4
+		summarizeBy: sum
+		sourceColumn: TransactionDuration
+
+		annotation SummarizationSetBy = Automatic
+
+	column LoginAttempts
+		dataType: int64
+		formatString: 0
+		lineageTag: 5d64453d-0bb4-4774-85ab-78381dd00a72
+		summarizeBy: sum
+		sourceColumn: LoginAttempts
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccountBalance
+		dataType: double
+		lineageTag: a2d84f38-307b-4941-8578-d12094cb530b
+		summarizeBy: sum
+		sourceColumn: AccountBalance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'bank_transactions_data_2 (1)' = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("C:\Users\YASHASWINI\Downloads\bank_transactions_data_2 (1).csv"), [Delimiter = ",", Columns = 16, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"TransactionID", type text}, {"AccountID", type text}, {"TransactionAmount", type number}, {"TransactionDate", type datetime}, {"TransactionType", type text}, {"Location", type text}, {"DeviceID", type text}, {"IP Address", type text}, {"MerchantID", type text}, {"Channel", type text}, {"CustomerAge", Int64.Type}, {"CustomerOccupation", type text}, {"TransactionDuration", Int64.Type}, {"LoginAttempts", Int64.Type}, {"AccountBalance", type number}, {"PreviousTransactionDate", type datetime}}, "en-US"),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed column type",{"PreviousTransactionDate", "TransactionDate"})
+				in
+				  #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

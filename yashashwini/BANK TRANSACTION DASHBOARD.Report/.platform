@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "BANK TRANSACTION DASHBOARD"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "47c4b2e8-0e2b-4268-81df-292d179711b9"
+  }
+}

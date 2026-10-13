@@ -1,0 +1,76 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY26SU07",
+      "reportVersionAtImport": {
+        "visual": "2.11.0",
+        "report": "3.4.0",
+        "page": "2.3.1"
+      },
+      "type": "SharedResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY26SU07",
+          "path": "BaseThemes/CY26SU07.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "ChatGPT_Image_Aug_19,_2026,_0401802709661550428.png",
+          "path": "ChatGPT_Image_Aug_19,_2026,_0401802709661550428.png",
+          "type": "Image"
+        },
+        {
+          "name": "ChatGPT_Image_Aug_19,_2026,_0419759320735674046.png",
+          "path": "ChatGPT_Image_Aug_19,_2026,_0419759320735674046.png",
+          "type": "Image"
+        },
+        {
+          "name": "ChatGPT_Image_Aug_25,_2026,_0218746205470525756.png",
+          "path": "ChatGPT_Image_Aug_25,_2026,_0218746205470525756.png",
+          "type": "Image"
+        },
+        {
+          "name": "ChatGPT_Image_Aug_25,_2026,_02606058913129131.png",
+          "path": "ChatGPT_Image_Aug_25,_2026,_02606058913129131.png",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}
