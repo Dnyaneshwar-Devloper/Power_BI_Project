@@ -1,0 +1,39 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "1.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "dax_measures_2.total_sales": {
+			      "Binding": {
+			        "ConceptualEntity": "Dax Measures (2)",
+			        "ConceptualProperty": "Total Sales"
+			      },
+			      "State": "Generated"
+			    },
+			    "dax_measures_2.avg_sales": {
+			      "Binding": {
+			        "ConceptualEntity": "Dax Measures (2)",
+			        "ConceptualProperty": "Avg Sales"
+			      },
+			      "State": "Generated"
+			    },
+			    "dax_measures_2.no_of_items": {
+			      "Binding": {
+			        "ConceptualEntity": "Dax Measures (2)",
+			        "ConceptualProperty": "No of Items"
+			      },
+			      "State": "Generated"
+			    },
+			    "dax_measures_2.avg_rating": {
+			      "Binding": {
+			        "ConceptualEntity": "Dax Measures (2)",
+			        "ConceptualProperty": "Avg Rating"
+			      },
+			      "State": "Generated"
+			    }
+			  }
+			}
+		contentType: json
+
