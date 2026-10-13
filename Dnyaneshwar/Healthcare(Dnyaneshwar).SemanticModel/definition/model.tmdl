@@ -1,0 +1,20 @@
+model Model
+	culture: en-IN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["hospital_data","Measure"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table hospital_data
+ref table Measure
+
+ref cultureInfo en-IN
+

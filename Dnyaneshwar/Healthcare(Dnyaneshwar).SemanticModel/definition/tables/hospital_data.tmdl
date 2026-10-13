@@ -1,0 +1,116 @@
+table hospital_data
+	lineageTag: 060d3a78-79bb-4d2f-8b4a-8e66aedb4e4d
+
+	column Timestamp
+		dataType: string
+		lineageTag: 38fa2dd9-170d-4cb0-9f18-413d17e9d40b
+		summarizeBy: none
+		sourceColumn: Timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column Patient_ID
+		dataType: string
+		lineageTag: 031ab272-f3e4-480b-9555-691cb17277c5
+		summarizeBy: none
+		sourceColumn: Patient_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age
+		dataType: int64
+		formatString: 0
+		lineageTag: 0db4d35c-d8cd-42e6-825d-3c685d420332
+		summarizeBy: sum
+		sourceColumn: Age
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: 88f30daa-a151-440c-8069-a79ee7a07508
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column Disease
+		dataType: string
+		lineageTag: eb0ca78e-5716-41fc-b451-18a985aea398
+		summarizeBy: none
+		sourceColumn: Disease
+
+		annotation SummarizationSetBy = Automatic
+
+	column Doctor
+		dataType: string
+		lineageTag: 927429ac-b0fc-486d-91bf-47ac8cc25b0a
+		summarizeBy: none
+		sourceColumn: Doctor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: e123125e-ac30-46c0-84c9-aa4d18af6fba
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column Admission_Type
+		dataType: string
+		lineageTag: e3bbad3b-9f3b-4480-81c1-40466067ca14
+		summarizeBy: none
+		sourceColumn: Admission_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Days_Admitted
+		dataType: int64
+		formatString: 0
+		lineageTag: 42d5bf3c-63d5-4b9a-87ff-ac78c433f4d6
+		summarizeBy: sum
+		sourceColumn: Days_Admitted
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bill_Amount
+		dataType: int64
+		formatString: 0
+		lineageTag: 047f5239-f875-4829-b0f7-149ac82b17c4
+		summarizeBy: sum
+		sourceColumn: Bill_Amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month = ```
+			FORMAT('hospital_data'[Timestamp], "MMM")
+			
+			```
+		lineageTag: 67420f7a-92cd-4986-852a-86a2fdebf773
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month_Number = ```
+			MONTH('hospital_data'[Timestamp])
+			
+			```
+		formatString: 0
+		lineageTag: da4711bd-461e-49c6-83a5-c5fec896af76
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition hospital_data = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("cn2hmlrwkk2urevumlsxzap7pm-4cnqannh7kie5gsoaymesegqia.datawarehouse.fabric.microsoft.com", "HEALTH_CARE"),
+				    dbo_hospital_data = Source{[Schema="dbo",Item="hospital_data"]}[Data]
+				in
+				    dbo_hospital_data
+
+	annotation PBI_ResultType = Table
+

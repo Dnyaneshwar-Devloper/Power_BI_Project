@@ -1,0 +1,114 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY26SU07",
+      "reportVersionAtImport": {
+        "visual": "2.11.0",
+        "report": "3.4.0",
+        "page": "2.3.1"
+      },
+      "type": "SharedResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "publicCustomVisuals": [
+    "PBI_CV_7B952816_A48F_49B4_9E13_15E3BB2C0337",
+    "reactLineAreaComposedChart7A4D7E2D4C0F45CDA735A1DFABC1A283",
+    "TornadoChart1452517688218"
+  ],
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY26SU07",
+          "path": "BaseThemes/CY26SU07.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "1-2-health-picture9700513256887585.png",
+          "path": "1-2-health-picture9700513256887585.png",
+          "type": "Image"
+        },
+        {
+          "name": "images_(2)002905143645611563.jpg",
+          "path": "images_(2)002905143645611563.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "images_(2)47141653654686655.jpg",
+          "path": "images_(2)47141653654686655.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "images_(2)5311529148173688.jpg",
+          "path": "images_(2)5311529148173688.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "vecteezy_hospital-building-3d-18994234304634883.png",
+          "path": "vecteezy_hospital-building-3d-18994234304634883.png",
+          "type": "Image"
+        },
+        {
+          "name": "vecteezy_male-surgeon-3d-profe8066378435112125.png",
+          "path": "vecteezy_male-surgeon-3d-profe8066378435112125.png",
+          "type": "Image"
+        },
+        {
+          "name": "vecteezy_medical-chart-3d-medi2284333087756274.png",
+          "path": "vecteezy_medical-chart-3d-medi2284333087756274.png",
+          "type": "Image"
+        },
+        {
+          "name": "vecteezy_medical-chart-3d-medi4783402206362499.png",
+          "path": "vecteezy_medical-chart-3d-medi4783402206362499.png",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}
